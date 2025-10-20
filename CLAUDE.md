@@ -718,12 +718,30 @@ _(Update after each major feature or before each release)_
 - ✅ Prisma Client generated
 - ✅ SQLite database initialized (`dev.db`)
 - ✅ Environment variables configured (`.env`)
-- ✅ Git repository initialized
+- ✅ Git repository initialized & committed
 - ✅ Quick start scripts created:
   - `START.bat` - Start development server
   - `CHECK.bat` - Verify setup
   - `SETUP.bat` - Re-run setup if needed
-- ✅ Documentation: `QUICKSTART.md` with step-by-step guide
+- ✅ Deployment scripts created:
+  - `deploy-github.bat` - GitHub repository creation & push
+  - `deploy-vercel.bat` - Vercel deployment automation
+- ✅ Documentation:
+  - `QUICKSTART.md` - Local development guide
+  - `DEPLOY.md` - Deployment guide (GitHub & Vercel)
+
+**Deployment Configuration** 📦
+- Platform: Vercel (recommended) or self-hosted
+- Database: Vercel Postgres or Supabase (production)
+- Required Environment Variables:
+  - `DATABASE_URL` - PostgreSQL connection string
+  - `ANTHROPIC_API_KEY` - Claude API key
+  - `NEXTAUTH_URL` - Production URL
+  - `NEXTAUTH_SECRET` - Random secret (32+ characters)
+  - `EMAIL_SERVER_*` - Email provider credentials (optional)
+- Build Command: `pnpm run build` (auto-detected by Vercel)
+- Output Directory: `apps/web/.next` (auto-detected)
+- Install Command: `pnpm install` (auto-detected)
 
 ---
 

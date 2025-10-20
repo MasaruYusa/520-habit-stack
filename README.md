@@ -10,13 +10,35 @@
 
 **このプロジェクトはすでにセットアップ済みです！**
 
-### すぐに始める：
+### ローカル開発：
 
 1. **環境変数を設定**: `.env` を編集して `ANTHROPIC_API_KEY` を追加
 2. **開発サーバー起動**: `START.bat` をダブルクリック（または `pnpm run dev`）
-3. **ブラウザで開く**: http://localhost:3000
+3. **ブラウザで開く**: http://localhost:3001
 
 📖 詳細は **[QUICKSTART.md](./QUICKSTART.md)** を参照
+
+### 🚀 デプロイ：
+
+**GitHub にプッシュ:**
+```bash
+# 1. GitHub CLI にログイン
+gh auth login
+
+# 2. リポジトリ作成 & プッシュ
+deploy-github.bat
+```
+
+**Vercel にデプロイ:**
+```bash
+# 1. Vercel CLI にログイン & デプロイ
+deploy-vercel.bat
+
+# 2. 環境変数を設定（Vercel Dashboard）
+# 3. データベースをセットアップ
+```
+
+📖 詳細は **[DEPLOY.md](./DEPLOY.md)** を参照
 
 ---
 
