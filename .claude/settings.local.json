@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm add -D prisma @prisma/client -w)",
+      "Bash(pnpm exec prisma generate)",
+      "Bash(pnpm run dev)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

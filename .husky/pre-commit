@@ -1,0 +1,36 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Pre-commit hook to enforce CLAUDE.md updates when source code changes
+
+# Check if there are changes in src/ or packages/
+SRC_CHANGES=$(git diff --cached --name-only | grep -E '^(apps/.*/(src|app)|packages/.*/src)' || true)
+
+if [ -n "$SRC_CHANGES" ]; then
+  # Check if CLAUDE.md is also being updated
+  CLAUDE_CHANGES=$(git diff --cached --name-only | grep 'CLAUDE.md' || true)
+
+  if [ -z "$CLAUDE_CHANGES" ]; then
+    echo "❌ ERROR: Source code changes detected, but CLAUDE.md was not updated."
+    echo ""
+    echo "📝 Changed files in src/ or packages/:"
+    echo "$SRC_CHANGES" | sed 's/^/  - /'
+    echo ""
+    echo "Please update CLAUDE.md with:"
+    echo "  1. Description of changes (if affecting architecture/requirements)"
+    echo "  2. Updated change log with today's date"
+    echo "  3. Any new risks or resolved open questions"
+    echo ""
+    echo "Then run: git add CLAUDE.md"
+    echo ""
+    exit 1
+  else
+    echo "✅ CLAUDE.md update detected alongside source changes"
+  fi
+fi
+
+# Run linter and type checker
+npm run lint --if-present
+npm run typecheck --if-present
+
+echo "✅ Pre-commit checks passed"
