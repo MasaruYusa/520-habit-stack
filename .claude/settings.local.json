@@ -9,7 +9,9 @@
       "Bash(git commit -m \"Fix Vercel deployment configuration\n\n- Remove invalid ''cwd'' property from vercel.json\n- Update postinstall script to use correct Prisma schema path\n- Prepare for Vercel deployment\")",
       "Bash(git push origin master)",
       "Bash(vercel --yes)",
-      "Bash(git commit --no-verify -m \"Add workspace dependencies to apps/web\n\n- Add @habit-stack/core and @habit-stack/ui as workspace dependencies\n- Update vercel.json build command\n- Fix module resolution for production build\")"
+      "Bash(git commit --no-verify -m \"Add workspace dependencies to apps/web\n\n- Add @habit-stack/core and @habit-stack/ui as workspace dependencies\n- Update vercel.json build command\n- Fix module resolution for production build\")",
+      "Bash(pnpm run build)",
+      "Bash(git commit --no-verify -m \"Upgrade next-auth and @auth/prisma-adapter\n\n- Upgrade next-auth from beta.4 to beta.25\n- Upgrade @auth/prisma-adapter from 1.4.0 to 2.7.4  \n- Fix TypeScript compatibility issues\n- Verify build passes locally\")"
     ],
     "deny": [],
     "ask": []
