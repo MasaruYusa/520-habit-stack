@@ -1,10 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "pnpm run build --filter=@habit-stack/web",
-  "devCommand": "pnpm run dev --filter=@habit-stack/web",
+  "buildCommand": "cd apps/web && pnpm run build",
+  "devCommand": "cd apps/web && pnpm run dev",
   "installCommand": "pnpm install",
   "framework": null,
-  "cwd": "apps/web",
   "outputDirectory": "apps/web/.next",
   "ignoreCommand": "git diff --quiet HEAD^ HEAD ./apps/web"
 }
