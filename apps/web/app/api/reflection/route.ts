@@ -1,13 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
-import { LLMClient } from "@habit-stack/core/src/llm/client";
 import {
+  LLMClient,
   generateWeeklyReflectionPrompt,
   parseWeeklyReflectionResponse,
-} from "@habit-stack/core/src/llm/prompts/weeklyReflection";
-import { calculateStreak } from "@habit-stack/core/src/streak";
-import { calculateWeeklyMetrics } from "@habit-stack/core/src/analytics";
+  calculateStreak,
+  calculateWeeklyMetrics,
+} from "@habit-stack/core";
 
 export async function POST(req: NextRequest) {
   try {

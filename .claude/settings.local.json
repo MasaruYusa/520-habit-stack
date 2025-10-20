@@ -6,7 +6,9 @@
       "Bash(pnpm run dev)",
       "Bash(pnpm install)",
       "Bash(git add -A)",
-      "Bash(git commit -m \"Fix Vercel deployment configuration\n\n- Remove invalid ''cwd'' property from vercel.json\n- Update postinstall script to use correct Prisma schema path\n- Prepare for Vercel deployment\")"
+      "Bash(git commit -m \"Fix Vercel deployment configuration\n\n- Remove invalid ''cwd'' property from vercel.json\n- Update postinstall script to use correct Prisma schema path\n- Prepare for Vercel deployment\")",
+      "Bash(git push origin master)",
+      "Bash(vercel --yes)"
     ],
     "deny": [],
     "ask": []

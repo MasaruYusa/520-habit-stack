@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
-import { LLMClient } from "@habit-stack/core/src/llm/client";
 import {
+  LLMClient,
   generateHabitStackPrompt,
   parseHabitStackResponse,
-} from "@habit-stack/core/src/llm/prompts/habitStack";
+} from "@habit-stack/core";
 
 export async function POST(req: NextRequest) {
   try {
